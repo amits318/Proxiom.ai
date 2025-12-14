@@ -244,7 +244,7 @@
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 56px;
             font-weight: 900;
             margin-bottom: 8px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -254,7 +254,7 @@
         }
 
         .stat-label {
-            font-size: 13px;
+            font-size: 16px;
             color: var(--gray-light);
             font-weight: 500;
         }
@@ -958,7 +958,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
             gap: 60px;
             margin-bottom: 60px;
         }
@@ -1008,6 +1008,14 @@
             font-size: 14px;
         }
 
+        .footer-bottom a {
+            transition: color 0.3s;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .feature-showcase {
@@ -1028,7 +1036,7 @@
             }
 
             .footer-content {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
 
@@ -1147,9 +1155,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge fade-in-up"> AI-Native Incident Management</div>
+                <div class="hero-badge fade-in-up">AI-Native Incident Management</div>
                 <h1 class="fade-in-up">Master the Full Incident Lifecycle</h1>
-                <p class="fade-in-up">Turn millions of log events into actionable insights. ProxiomSLM detects incidents, automatically routes them, and accelerates resolution with AI-powered remediation.</p>
+                <p class="fade-in-up">Turn millions of log events into actionable insights. ProxiomSLM automatically detects incidents, routes them to the right team, and accelerates resolution with AI-powered remediation.</p>
                 <div class="hero-buttons fade-in-up">
                     <a href="#demo" class="btn-primary">Request Demo</a>
                     <a href="#features" class="btn-secondary">See How It Works</a>
@@ -1656,6 +1664,13 @@
                     </ul>
                 </div>
                 <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:info@proxiom.ai">info@proxiom.ai</a></li>
@@ -1665,7 +1680,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ProxiomSLM. All rights reserved.</p>
+                <p>&copy; 2024 ProxiomSLM. All rights reserved. | 
+                <a href="/privacy-policy" style="color: var(--gray-light); text-decoration: none; margin: 0 8px;">Privacy Policy</a> | 
+                <a href="/terms-of-service" style="color: var(--gray-light); text-decoration: none; margin: 0 8px;">Terms of Service</a></p>
             </div>
         </div>
     </footer>

@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sootro - Agentic AI for Software Troubleshooting</title>
-    <meta name="description" content="Transform chaos into clarity with Sootro's intelligent dual-engine framework. Cut troubleshooting time by 80% with AI that understands your code.">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>ProxiomSLM - AI-Powered Incident Management Platform</title>
+    <meta name="description" content="Transform incident management with AI. Reduce alert noise by 90%+, automate triage, and resolve issues faster with ProxiomSLM.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -20,124 +16,129 @@
         }
 
         :root {
-            --primary-blue: #8ba4f5;
-            --primary-purple: #9b7cc8;
-            --primary-teal: #38c5e0;
-            --dark-bg: #f8f9fb;
-            --dark-secondary: #ffffff;
-            --dark-accent: #f1f3f6;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-accent: #2d3748;
-            --success-green: #48bb78;
-            --warning-orange: #ed8936;
-            --error-red: #e53e3e;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #0ea5e9;
+            --accent: #8b5cf6;
+            --dark: #0f172a;
+            --dark-2: #1e293b;
+            --dark-3: #334155;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
+            color: var(--dark);
+            background: #ffffff;
             overflow-x: hidden;
         }
 
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(248, 249, 251, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
         }
 
-        .nav {
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
         }
 
         .nav-links {
             display: flex;
+            gap: 40px;
             list-style: none;
-            gap: 2rem;
             align-items: center;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--dark-3);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 15px;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--primary-blue);
+            color: var(--primary);
         }
 
-        .cta-btn {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+        .btn-primary {
+            background: var(--primary);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding: 12px 28px;
+            border-radius: 10px;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
             display: inline-block;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         }
 
-        .cta-btn:hover {
+        .btn-primary:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
         }
 
-        .cta-btn.secondary {
+        .btn-secondary {
             background: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
+            color: var(--dark);
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            border: 2px solid var(--dark);
         }
 
-        .cta-btn.secondary:hover {
-            background: var(--primary-blue);
+        .btn-secondary:hover {
+            background: var(--dark);
             color: white;
-        }
-
-        /* Main Content */
-        .main {
-            margin-top: 80px;
-        }
-
-        .section {
-            padding: 5rem 0;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(6, 182, 212, 0.1));
-            padding: 8rem 0;
-            text-align: center;
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
             overflow: hidden;
         }
@@ -149,655 +150,939 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%);
-            z-index: -1;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-primary), var(--primary-teal));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            letter-spacing: -2px;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+            font-size: 22px;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
-        .hero-ctas {
+        .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 80px;
         }
 
-        .hero-visual {
-            background: var(--dark-secondary);
+        .hero .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-image {
+            max-width: 1100px;
+            margin: 0 auto;
             border-radius: 16px;
-            padding: 2rem;
-            margin-top: 3rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            position: relative;
             overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .flow-diagram {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .flow-step {
-            background: var(--dark-accent);
-            padding: 1.5rem;
-            border-radius: 12px;
+        /* Stats Bar */
+        .stats-section {
+            background: var(--dark);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
             text-align: center;
-            flex: 1 1 0;
-            min-width: 200px;
-            max-width: none;
-            position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .flow-step i {
-            font-size: 2rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
+        .stat-item {
+            color: white;
         }
 
-        .flow-step h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .flow-step p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .flow-arrow {
-            color: var(--primary-teal);
-            font-size: 1.5rem;
-            margin: 0 1rem;
+        .stat-label {
+            font-size: 16px;
+            color: var(--gray-light);
+            font-weight: 500;
         }
 
         /* Problem Section */
         .problem-section {
-            background: var(--dark-accent);
+            padding: 120px 0;
+            background: var(--light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 52px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
         }
 
         .problem-card {
-            background: var(--dark-accent);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
         }
 
         .problem-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
-        .problem-card .stat {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--warning-orange);
-            display: block;
+        .problem-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
         }
 
         .problem-card h3 {
-            margin: 1rem 0;
-            color: var(--text-primary);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
         }
 
         .problem-card p {
-            color: var(--text-secondary);
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 15px;
         }
 
-        /* Solution Overview */
-        .solution-grid {
+        /* Features Section */
+        .features-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .feature-showcase {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
         }
 
-        .solution-card {
-            background: var(--dark-secondary);
-            padding: 2rem;
+        .feature-showcase:nth-child(even) {
+            direction: rtl;
+        }
+
+        .feature-showcase:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .feature-content h3 {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .feature-content p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            color: var(--dark-3);
+            font-size: 16px;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .feature-image {
             border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
         }
 
-        .solution-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-blue);
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .solution-card i {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
-
-        .solution-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .solution-card p {
-            color: var(--text-secondary);
-        }
-
-        /* Dual Engine Section */
-        .dual-engine-section {
-            background: linear-gradient(135deg, rgba(155, 124, 200, 0.1), rgba(139, 164, 245, 0.1));
-            padding: 6rem 0;
-        }
-
-        .engine-toggle {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-
-        .toggle-container {
-            background: var(--dark-secondary);
+        .feature-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            padding: 6px 16px;
             border-radius: 50px;
-            padding: 0.5rem;
-            display: flex;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .toggle-btn {
-            background: transparent;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .toggle-btn.active {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+        /* How It Works */
+        .how-it-works {
+            padding: 120px 0;
+            background: var(--dark);
             color: white;
         }
 
-        .engine-content {
-            display: none;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .engine-content.active {
+        .steps-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
         }
 
-        .engine-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .engine-info p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .engine-features {
-            list-style: none;
-        }
-
-        .engine-features li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
+        .step-card {
+            text-align: center;
             position: relative;
         }
 
-        .engine-features li::before {
-            content: '✓';
-            color: var(--success-green);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .engine-visual {
-            background: var(--dark-secondary);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            min-height: 300px;
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0 auto 24px;
         }
 
-        .graph-visualization {
-            width: 100%;
-            height: 250px;
-            position: relative;
-            background: var(--dark-accent);
-            border-radius: 12px;
-            overflow: hidden;
+        .step-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        /* Target Applications */
-        .target-apps-grid {
+        .step-card p {
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        /* Personas Section */
+        .personas-section {
+            padding: 120px 0;
+            background: var(--light);
+        }
+
+        .personas-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
         }
 
-        .app-card {
-            background: var(--dark-secondary);
-            padding: 2rem;
+        .persona-card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .persona-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .app-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-teal);
-        }
-
-        .app-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .app-card.procedural .icon {
-            color: var(--primary-blue);
-        }
-
-        .app-card.microservices .icon {
-            color: var(--primary-teal);
-        }
-
-        .app-card.agentic .icon {
-            color: var(--primary-purple);
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: var(--dark-secondary);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-blue);
-        }
-
-        .feature-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
         }
 
-        .feature-header i {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-right: 1rem;
+        .persona-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: var(--dark);
         }
 
-        .feature-header h3 {
-            color: var(--text-primary);
+        .persona-subtitle {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 32px;
         }
 
-        .feature-card p {
-            color: var(--text-secondary);
+        .persona-card ul {
+            list-style: none;
         }
 
-        /* Enterprise Section */
-        .enterprise-section {
-            background: var(--dark-accent);
+        .persona-card li {
+            padding: 14px 0;
+            padding-left: 32px;
+            position: relative;
+            color: var(--dark-3);
+            font-size: 16px;
+            line-height: 1.6;
         }
 
-        .enterprise-grid {
+        .persona-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Integrations */
+        .integrations-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .integrations-preview {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .integrations-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Implementation Process */
+        .implementation-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .phases-overview {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+            margin-bottom: 80px;
         }
 
-        .enterprise-item {
+        .phase-card {
+            background: var(--light);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .phase-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phase-card h3 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .phase-card > p {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .phase-milestones {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .phase-milestones li {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .phase-milestones li:last-child {
+            border-bottom: none;
+        }
+
+        .phase-milestones strong {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .phase-milestones span {
+            display: block;
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .phase-outcome {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--success);
+        }
+
+        .phase-outcome strong {
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .implementation-stages {
+            margin-top: 32px;
+        }
+
+        .stage-group {
+            margin-bottom: 32px;
+        }
+
+        .stage-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .stage-group h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .stage-items {
+            display: grid;
+            gap: 12px;
+        }
+
+        .stage-item {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .stage-item:hover {
+            transform: translateX(4px);
+            border-color: var(--primary);
+        }
+
+        .stage-item.highlight {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-color: var(--primary);
+        }
+
+        .stage-num {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .stage-item.highlight .stage-num {
+            background: linear-gradient(135deg, var(--warning) 0%, #f97316 100%);
+        }
+
+        .stage-item strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .stage-item p {
+            font-size: 14px;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Enablement Section */
+        .enablement-section {
+            background: var(--dark);
+            padding: 60px;
+            border-radius: 20px;
+            margin: 80px 0;
+            color: white;
+        }
+
+        .enablement-section h3 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .enablement-intro {
+            font-size: 18px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+        }
+
+        .enablement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .enablement-card {
+            background: var(--dark-2);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--dark-3);
+        }
+
+        .enablement-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .enablement-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .enablement-card p {
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        /* Implementation Results */
+        .implementation-results {
             text-align: center;
-            padding: 2rem;
         }
 
-        .enterprise-item i {
-            font-size: 2.5rem;
-            color: var(--primary-teal);
-            margin-bottom: 1rem;
+        .implementation-results h3 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 48px;
+            color: var(--dark);
         }
 
-        .enterprise-item h3 {
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
         }
 
-        .enterprise-item p {
-            color: var(--text-secondary);
+        .result-card {
+            background: white;
+            padding: 40px 32px;
+            border-radius: 16px;
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-card.highlight {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-color: var(--primary);
+        }
+
+        .result-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .result-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .result-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 15px;
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-            text-align: center;
+            padding: 120px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-buttons .cta-btn {
-            background: white;
-            color: var(--primary-blue);
-        }
-
-        .cta-buttons .cta-btn.secondary {
-            background: transparent;
-            color: white;
-            border-color: white;
-        }
-
-        .cta-buttons .cta-btn.secondary:hover {
-            background: white;
-            color: var(--primary-blue);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-secondary);
-            padding: 3rem 0 1rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary-blue);
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
             text-align: center;
-            color: var(--text-secondary);
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto 60px;
         }
 
-        .modal.show {
-            display: flex;
-            opacity: 1;
-            align-items: center;
-            justify-content: center;
+        .cta-content h2 {
+            font-size: 52px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
-        .modal-content {
-            background: var(--dark-bg);
-            border-radius: 16px;
-            padding: 2rem;
+        .cta-content p {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 40px;
+        }
+
+        .demo-form {
             max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transform: translateY(50px);
-            transition: transform 0.3s ease;
+            margin: 0 auto;
+            background: white;
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
         }
 
-        .modal.show .modal-content {
-            transform: translateY(0);
+        .demo-form h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 32px;
+            text-align: center;
         }
 
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .modal-header h2 {
-            color: var(--text-primary);
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .close-btn:hover {
-            color: var(--text-primary);
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
+            text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .form-group.required label::after {
-            content: ' *';
-            color: var(--error-red);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            background: var(--dark-secondary);
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-        }
-
-        .form-control.error {
-            border-color: var(--error-red);
-        }
-
-        .error-message {
-            color: var(--error-red);
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-        }
-
-        .social-proof {
-            background: var(--dark-secondary);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .social-proof-stat {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .social-proof-stat .number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-teal);
-        }
-
-        .benefits-list {
-            list-style: none;
-            margin: 1rem 0;
-        }
-
-        .benefits-list li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .benefits-list li::before {
-            content: '✓';
-            color: var(--success-green);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
+            margin-bottom: 8px;
             font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            color: var(--dark);
+            font-size: 14px;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+            background: white;
         }
 
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
-        /* Success Message */
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
         .success-message {
             display: none;
+            background: var(--success);
+            color: white;
+            padding: 16px;
+            border-radius: 10px;
+            margin-bottom: 24px;
             text-align: center;
-            padding: 2rem;
+            font-weight: 600;
         }
 
         .success-message.show {
             display: block;
         }
 
-        .success-message i {
-            font-size: 4rem;
-            color: var(--success-green);
-            margin-bottom: 1rem;
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 40px;
         }
 
-        .success-message h3 {
-            color: var(--text-primary);
-            margin-bottom: 1rem;
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
         }
 
-        .success-message p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+        .footer-brand h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--gray-light);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-section h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--dark-3);
+            padding-top: 32px;
+            text-align: center;
+            color: var(--gray-light);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .feature-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature-showcase:nth-child(even) {
+                direction: ltr;
+            }
+
+            .personas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phases-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .feature-content h3 {
+                font-size: 28px;
+            }
+
+            .phase-card {
+                padding: 32px 24px;
+            }
+
+            .phase-card h3 {
+                font-size: 24px;
+            }
+
+            .enablement-section {
+                padding: 40px 24px;
+            }
+
+            .enablement-section h3 {
+                font-size: 28px;
+            }
+
+            .implementation-results h3 {
+                font-size: 28px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .demo-form {
+                padding: 32px 24px;
+            }
         }
 
         /* Animations */
@@ -812,904 +1097,569 @@
             }
         }
 
-        @keyframes pulse {
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes float {
             0%, 100% {
-                opacity: 1;
+                transform: translateY(0);
             }
             50% {
-                opacity: 0.5;
+                transform: translateY(-10px);
             }
         }
 
-        .animate-in {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .hero-ctas {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .flow-diagram {
-                flex-direction: column;
-            }
-
-            .flow-arrow {
-                transform: rotate(90deg);
-                margin: 1rem 0;
-            }
-
-            .engine-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .section {
-                padding: 3rem 0;
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-
-            .modal-content {
-                padding: 1.5rem;
-                margin: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 4rem 0;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .cta-btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .toggle-container {
-                width: 100%;
-            }
-
-            .toggle-btn {
-                flex: 1;
-                padding: 0.75rem 1rem;
-            }
-        }
-
-        /* Loading States */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(0, 0, 0, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-2 {
-            margin-bottom: 2rem;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">Sootro</div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo"><span>Proxiom</span>SLM</a>
             <ul class="nav-links">
-                <li><a href="#solution">Solution</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#customer-success">Customer Success</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+                <li><a href="#demo">Get Demo</a></li>
             </ul>
-            <button class="cta-btn" onclick="openTrialModal()">Start Free Trial</button>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="hero section">
-            <h1>Agentic AI for Software Troubleshooting</h1>
-            <p>Sootro's intelligent dual-engine framework transforms chaos into clarity. Cut troubleshooting time by 80% with AI that understands your code.</p>
-
-            <div class="hero-ctas">
-                <button class="cta-btn" onclick="openTrialModal()">Start Free Trial</button>
-                <button class="cta-btn secondary" onclick="watchDemo()">Watch Demo</button>
-            </div>
-
-            <div class="hero-visual">
-                <div class="flow-diagram">
-                    <div class="flow-step">
-                        <i class="fas fa-database"></i>
-                        <h3>Log Ingestion</h3>
-                        <p>Unified data model for any format</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <i class="fas fa-brain"></i>
-                        <h3>AI Analysis</h3>
-                        <p>Dual-engine intelligence</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <i class="fas fa-project-diagram"></i>
-                        <h3>Graph Relationships</h3>
-                        <p>Code correlation mapping</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <i class="fas fa-search"></i>
-                        <h3>Root Cause</h3>
-                        <p>Precise identification</p>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge fade-in-up">🚀 AI-Native Incident Management</div>
+                <h1 class="fade-in-up">Master the Full Incident Lifecycle</h1>
+                <p class="fade-in-up">Turn millions of log events into actionable insights. ProxiomSLM reduces alert noise by 90%+, automatically routes incidents, and accelerates resolution with AI-powered remediation.</p>
+                <div class="hero-buttons fade-in-up">
+                    <a href="#demo" class="btn-primary">Request Demo</a>
+                    <a href="#features" class="btn-secondary">See How It Works</a>
                 </div>
             </div>
-        </section>
+            <div class="hero-image fade-in-up">
+                <img src="images/Incident_Dashboard.png" alt="ProxiomSLM Dashboard">
+            </div>
+        </div>
+    </section>
 
-        <!-- Problem Section -->
-        <section class="problem-section section">
-            <h2 class="section-title">The Hidden Cost of Software Complexity</h2>
-            <p class="section-subtitle">Modern software architecture creates challenges that traditional monitoring can't solve</p>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">90%+</div>
+                    <div class="stat-label">Noise Reduction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Seconds</div>
+                    <div class="stat-label">To Right Team</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2.5hrs</div>
+                    <div class="stat-label">Avg MTTR</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Zero</div>
+                    <div class="stat-label">Config Needed</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">The Challenge</div>
+                <h2 class="section-title">Traditional Tools Can't Keep Up</h2>
+                <p class="section-subtitle">Modern applications generate thousands of error events per minute. Your team deserves better than drowning in alerts.</p>
+            </div>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <span class="stat">40%</span>
-                    <h3>Developer Time Lost</h3>
-                    <p>Searching through logs and debugging instead of building features</p>
+                    <div class="problem-icon">🔔</div>
+                    <h3>Alert Fatigue</h3>
+                    <p>Hundreds of similar alerts for one root cause. Engineers can't focus on what matters when buried in noise.</p>
                 </div>
                 <div class="problem-card">
-                    <span class="stat">$5.6K</span>
-                    <h3>Cost Per Minute</h3>
-                    <p>Average downtime impact for enterprise applications</p>
+                    <div class="problem-icon">⏱️</div>
+                    <h3>Manual Triage</h3>
+                    <p>Someone must read each alert and decide ownership. Incident response becomes a full-time job.</p>
                 </div>
                 <div class="problem-card">
-                    <span class="stat">10x</span>
-                    <h3>More Log Volume</h3>
-                    <p>Data explosion making manual analysis impossible</p>
+                    <div class="problem-icon">🔀</div>
+                    <h3>Context Switching</h3>
+                    <p>Different teams use different tools, losing investigation threads and slowing resolution.</p>
                 </div>
                 <div class="problem-card">
-                    <span class="stat">5+</span>
-                    <h3>Data Silos</h3>
-                    <p>Separate systems making correlation nearly impossible</p>
+                    <div class="problem-icon">🔄</div>
+                    <h3>Recurring Issues</h3>
+                    <p>Engineers start from scratch every time, even for problems you've seen before.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Solution Overview -->
-        <section class="solution-section section" id="solution">
-            <h2 class="section-title">Meet Sootro: Where Intelligence Meets Operations</h2>
-            <p class="section-subtitle">A revolutionary troubleshooting platform that understands your applications like never before</p>
-
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <i class="fas fa-database"></i>
-                    <h3>Unified Data Model</h3>
-                    <p>Ingests and normalizes logs from any source, creating a comprehensive view of your entire system in real-time.</p>
-                </div>
-                <div class="solution-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>AI-Powered Analysis</h3>
-                    <p>Advanced machine learning models automatically identify patterns, anomalies, and relationships across your infrastructure.</p>
-                </div>
-                <div class="solution-card">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>Graph Intelligence</h3>
-                    <p>Maps complex relationships between services, dependencies, and code paths to surface hidden connections.</p>
-                </div>
-                <div class="solution-card">
-                    <i class="fas fa-search"></i>
-                    <h3>Root Cause Discovery</h3>
-                    <p>Instantly pinpoints the exact source of issues, dramatically reducing time from detection to resolution.</p>
-                </div>
-                <div class="solution-card">
-                    <i class="fas fa-lightning"></i>
-                    <h3>Lightning Fast</h3>
-                    <p>Sub-second query responses even on petabytes of data, ensuring your team never waits for answers.</p>
-                </div>
-                <div class="solution-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>Seamless Integration</h3>
-                    <p>Works with your existing tools and workflows, requiring minimal setup and zero configuration changes.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dual Engine Section -->
-        <section class="dual-engine-section section">
-            <h2 class="section-title">Dual Engine Intelligence: Adaptive by Design</h2>
-            <p class="section-subtitle">Two specialized engines that adapt to your environment for maximum effectiveness</p>
-
-            <div class="engine-toggle">
-                <div class="toggle-container">
-                    <button class="toggle-btn active" onclick="showEngine('deterministic')">Deterministic Engine</button>
-                    <button class="toggle-btn" onclick="showEngine('probabilistic')">Probabilistic Engine</button>
-                </div>
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Platform Capabilities</div>
+                <h2 class="section-title">AI-Powered End-to-End Automation</h2>
+                <p class="section-subtitle">From detection to resolution, ProxiomSLM automates the entire incident lifecycle</p>
             </div>
 
-            <div id="deterministic" class="engine-content active">
-                <div class="engine-info">
-                    <h3>Deterministic Graph Engine</h3>
-                    <p><strong>When:</strong> Source code access available</p>
-                    <p><strong>How:</strong> Direct log-to-code correlation using static analysis</p>
-
-                    <h4>Benefits:</h4>
-                    <ul class="engine-features">
-                        <li>Precise root cause identification</li>
-                        <li>Exact code segments highlighted</li>
-                        <li>Complete execution path reconstruction</li>
-                        <li>Real-time dependency mapping</li>
-                        <li>Automated fix suggestions</li>
+            <!-- Feature 1: Intelligent Clustering -->
+            <div class="feature-showcase">
+                <div class="feature-content">
+                    <div class="feature-badge">✓ 90%+ Noise Reduction</div>
+                    <h3>Intelligent Log Clustering</h3>
+                    <p>See one incident instead of 500 alerts. Our ML engine groups related error events together, showing you the signal without the noise.</p>
+                    <ul class="feature-list">
+                        <li>Automatically identifies patterns across millions of log events</li>
+                        <li>Reduces duplicate alerts by clustering similar errors</li>
+                        <li>Shows representative error with full context</li>
+                        <li>Real-time clustering during cascading failures</li>
                     </ul>
                 </div>
-                <div class="engine-visual">
-                    <div class="graph-visualization" id="deterministic-viz">
-                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-secondary);">
-                            <div style="text-align: center;">
-                                <i class="fas fa-code" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
-                                <p>Code-Level Analysis</p>
-                                <p style="font-size: 0.9rem;">Direct correlation between logs and source code</p>
+                <div class="feature-image">
+                    <img src="images/Incidents_.png" alt="Incident Clustering">
+                </div>
+            </div>
+
+            <!-- Feature 2: Auto-Assignment -->
+            <div class="feature-showcase">
+                <div class="feature-content">
+                    <div class="feature-badge">✓ Instant Routing</div>
+                    <h3>AI-Powered Auto-Assignment</h3>
+                    <p>Write rules in plain English. AI routes incidents to the right team and assignee automatically, with progressive Trust Ladder automation.</p>
+                    <ul class="feature-list">
+                        <li>Natural language rule creation</li>
+                        <li>Configurable assignment modes (Team Lead, Round Robin, AI Optimal)</li>
+                        <li>Trust Ladder: from suggestions to automated fixes</li>
+                        <li>Learns from team patterns and expertise</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="images/AI-AUto_fix.png" alt="Auto-Assignment Rules">
+                </div>
+            </div>
+
+            <!-- Feature 3: Service Graph -->
+            <div class="feature-showcase">
+                <div class="feature-content">
+                    <div class="feature-badge">✓ Instant Impact Analysis</div>
+                    <h3>Service Dependency Graph</h3>
+                    <p>Visualize your entire architecture. Query with natural language to understand blast radius and dependencies instantly.</p>
+                    <ul class="feature-list">
+                        <li>Real-time dependency visualization</li>
+                        <li>Natural language queries: "What depends on user database?"</li>
+                        <li>Identify downstream impact during incidents</li>
+                        <li>Interactive graph explorer with Cypher support</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="images/Graph_Explorer_-_1.png" alt="Service Dependency Graph">
+                </div>
+            </div>
+
+            <!-- Feature 4: Teams & Assignment -->
+            <div class="feature-showcase">
+                <div class="feature-content">
+                    <div class="feature-badge">✓ Smart Routing</div>
+                    <h3>Flexible Team Configuration</h3>
+                    <p>Configure teams, assignment modes, and routing logic that matches your organization's structure and workflows.</p>
+                    <ul class="feature-list">
+                        <li>Multi-level hierarchy support (Enterprise → Program → Project)</li>
+                        <li>Multiple assignment modes per team</li>
+                        <li>Load balancing with "Least Loaded" mode</li>
+                        <li>Manual override when needed</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="images/Auto-team_assignment.png" alt="Team Configuration">
+                </div>
+            </div>
+
+            <!-- Feature 5: Integrations -->
+            <div class="feature-showcase">
+                <div class="feature-content">
+                    <div class="feature-badge">✓ Seamless Integration</div>
+                    <h3>Connect Your Entire Stack</h3>
+                    <p>Integrate with ticketing systems, monitoring tools, and communication channels. One unified workflow for incident management.</p>
+                    <ul class="feature-list">
+                        <li>Jira, ServiceNow, GitHub Issues</li>
+                        <li>PagerDuty, Datadog, New Relic</li>
+                        <li>Slack, Microsoft Teams, Email, SMS</li>
+                        <li>Webhooks for custom integrations</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="images/Integrations.png" alt="Integrations">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge" style="background: rgba(255, 255, 255, 0.1); color: white;">The Process</div>
+                <h2 class="section-title" style="color: white;">How ProxiomSLM Works</h2>
+                <p class="section-subtitle" style="color: var(--gray-light);">Four steps to transform your incident management</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Ingest & Parse</h4>
+                    <p>Adaptive log parsing handles any format automatically. PII/PCI redaction ensures compliance from day one.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Cluster & Detect</h4>
+                    <p>ML clustering groups related errors. Real-time analytics identify patterns and anomalies across billions of events.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Route & Assign</h4>
+                    <p>AI-powered rules route incidents to the right team instantly. Configure assignment modes to match your workflow.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Analyze & Resolve</h4>
+                    <p>Trust Ladder remediation suggests fixes based on historical data, deployments, and service dependencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Process -->
+    <section class="implementation-section" id="implementation">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Approach</div>
+                <h2 class="section-title">Structured Implementation Playbook</h2>
+                <p class="section-subtitle">A proven, two-phase journey from discovery to self-healing operations</p>
+            </div>
+
+            <!-- Phase Overview -->
+            <div class="phases-overview">
+                <div class="phase-card">
+                    <div class="phase-number">Phase 1</div>
+                    <h3>Discovery & Proposal</h3>
+                    <p>Deep-dive analysis to understand your unique environment and map a precise path to success</p>
+                    <ul class="phase-milestones">
+                        <li>
+                            <strong>Analyze Incident Patterns</strong>
+                            <span>Build quantitative baseline of your current incident management reality</span>
+                        </li>
+                        <li>
+                            <strong>Map Your Environment</strong>
+                            <span>Understand your technical architecture and process context for seamless integration</span>
+                        </li>
+                        <li>
+                            <strong>Assess Codebase Readiness</strong>
+                            <span>Determine log sufficiency—the critical data that fuels our AI models</span>
+                        </li>
+                    </ul>
+                    <div class="phase-outcome">
+                        <strong>Outcome:</strong> A bespoke implementation proposal with clear scope, data-backed objectives, and precise timeline
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-number">Phase 2</div>
+                    <h3>Implementation & Partnership</h3>
+                    <p>Hands-on deployment, team training, and achieving our shared goal of autonomous incident resolution</p>
+                    <div class="implementation-stages">
+                        <div class="stage-group">
+                            <h4>Foundation</h4>
+                            <div class="stage-items">
+                                <div class="stage-item">
+                                    <span class="stage-num">1</span>
+                                    <div>
+                                        <strong>Environment Setup</strong>
+                                        <p>ProxiomSLM solution installation</p>
+                                    </div>
+                                </div>
+                                <div class="stage-item">
+                                    <span class="stage-num">2</span>
+                                    <div>
+                                        <strong>Model Tuning</strong>
+                                        <p>Fine-tune AI models with your log data</p>
+                                    </div>
+                                </div>
+                                <div class="stage-item">
+                                    <span class="stage-num">3</span>
+                                    <div>
+                                        <strong>Data Enhancement</strong>
+                                        <p>Log sufficiency setup in codebase</p>
+                                    </div>
+                                </div>
+                                <div class="stage-item">
+                                    <span class="stage-num">4</span>
+                                    <div>
+                                        <strong>Application Setup</strong>
+                                        <p>ProxiomSLM application configuration</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stage-group">
+                            <h4>Launch</h4>
+                            <div class="stage-items">
+                                <div class="stage-item">
+                                    <span class="stage-num">5</span>
+                                    <div>
+                                        <strong>Validation</strong>
+                                        <p>Rigorous testing and validation cycles</p>
+                                    </div>
+                                </div>
+                                <div class="stage-item">
+                                    <span class="stage-num">6</span>
+                                    <div>
+                                        <strong>Team Enablement</strong>
+                                        <p>Training for Support & DevOps teams</p>
+                                    </div>
+                                </div>
+                                <div class="stage-item highlight">
+                                    <span class="stage-num">7</span>
+                                    <div>
+                                        <strong>Go-Live</strong>
+                                        <p>Managed system launch</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stage-group">
+                            <h4>Partnership</h4>
+                            <div class="stage-items">
+                                <div class="stage-item">
+                                    <span class="stage-num">8</span>
+                                    <div>
+                                        <strong>Continuous Improvement</strong>
+                                        <p>Ongoing monitoring and review</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="probabilistic" class="engine-content">
-                <div class="engine-info">
-                    <h3>Probabilistic Graph Engine</h3>
-                    <p><strong>When:</strong> No code access (third-party systems, legacy, SaaS)</p>
-                    <p><strong>How:</strong> ML pattern analysis of log signatures and temporal correlations</p>
-
-                    <h4>Benefits:</h4>
-                    <ul class="engine-features">
-                        <li>Predictive failure detection</li>
-                        <li>Cross-system pattern recognition</li>
-                        <li>Anomaly detection and alerting</li>
-                        <li>Behavioral baseline learning</li>
-                        <li>Proactive issue prevention</li>
-                    </ul>
-                </div>
-                <div class="engine-visual">
-                    <div class="graph-visualization" id="probabilistic-viz">
-                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-secondary);">
-                            <div style="text-align: center;">
-                                <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--primary-teal); margin-bottom: 1rem;"></i>
-                                <p>Pattern Analysis</p>
-                                <p style="font-size: 0.9rem;">ML-driven correlation and prediction</p>
-                            </div>
-                        </div>
+            <!-- Training & Enablement -->
+            <div class="enablement-section">
+                <h3>More Than a Tool: Empowering Your Teams</h3>
+                <p class="enablement-intro">We don't just install software—we enable expertise. Your teams become masters of this AI-driven workflow.</p>
+                
+                <div class="enablement-grid">
+                    <div class="enablement-card">
+                        <div class="enablement-icon">🎓</div>
+                        <h4>Platform Mastery</h4>
+                        <p>Deep-dive sessions on using the ProxiomSLM interface and features</p>
+                    </div>
+                    <div class="enablement-card">
+                        <div class="enablement-icon">🔄</div>
+                        <h4>Workflow Integration</h4>
+                        <p>Best practices for integrating AI-driven insights into existing incident management processes</p>
+                    </div>
+                    <div class="enablement-card">
+                        <div class="enablement-icon">📊</div>
+                        <h4>Data-Driven Review</h4>
+                        <p>Training on interpreting performance data and participating in ongoing model improvements</p>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Target Applications -->
-        <section class="target-apps-section section">
-            <h2 class="section-title">Built for Modern Enterprise Architectures</h2>
-            <p class="section-subtitle">Optimized for the demands of enterprise software environments</p>
-
-            <div class="target-apps-grid">
-                <div class="app-card procedural">
-                    <div class="icon">
-                        <i class="fas fa-building"></i>
+            <!-- Results -->
+            <div class="implementation-results">
+                <h3>The Result: A New Standard for IT Operations</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-icon">⚡</div>
+                        <h4>Faster Resolution</h4>
+                        <p>Incidents are detected, assigned, and resolved with unparalleled speed</p>
                     </div>
-                    <h3>Scaling Development</h3>
-                    <p>Built for systems with thousands of microservices and distributed applications across cloud platforms.</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li>Multi-cloud deployments</li>
-                        <li>Container orchestration</li>
-                        <li>Event-driven architectures</li>
-                    </ul>
-                </div>
-                <div class="app-card microservices">
-                    <div class="icon">
-                        <i class="fas fa-cubes"></i>
+                    <div class="result-card">
+                        <div class="result-icon">✓</div>
+                        <h4>Clear Accountability</h4>
+                        <p>Every issue has a clear path and owner, tracked intelligently by the system</p>
                     </div>
-                    <h3>Cloud-Native Applications</h3>
-                    <p>Seamlessly handles complex microservices architectures with automatic service discovery and mapping.</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li>Kubernetes environments</li>
-                        <li>Serverless functions</li>
-                        <li>Distributed databases</li>
-                    </ul>
-                </div>
-                <div class="app-card agentic">
-                    <div class="icon">
-                        <i class="fas fa-code"></i>
+                    <div class="result-card">
+                        <div class="result-icon">🎯</div>
+                        <h4>Proactive Intelligence</h4>
+                        <p>Teams freed from repetitive tasks to focus on strategic improvements, guided by AI insights</p>
                     </div>
-                    <h3>Graph Intelligence</h3>
-                    <p>Maps relationships between code, infrastructure, and business logic for complete system understanding.</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li>Code-to-infrastructure mapping</li>
-                        <li>Dependency visualization</li>
-                        <li>Impact analysis</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Features -->
-        <section class="features-section section" id="features">
-            <h2 class="section-title">Enterprise-Grade Capabilities</h2>
-            <p class="section-subtitle">Powerful features designed for the demands of modern software operations</p>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <i class="fas fa-chart-bar"></i>
-                        <h3>Enhanced Code Analysis</h3>
+                    <div class="result-card highlight">
+                        <div class="result-icon">🚀</div>
+                        <h4>Foundation for Self-Healing</h4>
+                        <p>Platform, processes, and partnership in place to pursue the ultimate goal of autonomous operations</p>
                     </div>
-                    <p>Deep static analysis combined with runtime insights to understand exactly how your code behaves in production environments.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <i class="fas fa-satellite-dish"></i>
-                        <h3>Smart Integrations</h3>
-                    </div>
-                    <p>Connect seamlessly with your existing monitoring tools, CI/CD pipelines, and incident management systems for unified visibility.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <i class="fas fa-eye"></i>
-                        <h3>Lightning Fast Queries</h3>
-                    </div>
-                    <p>Sub-second response times on massive datasets with intelligent indexing and caching for instant troubleshooting insights.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <i class="fas fa-microchip"></i>
-                        <h3>Graph-Based Insights</h3>
-                    </div>
-                    <p>Revolutionary graph intelligence maps relationships between services, revealing hidden dependencies and failure patterns.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Hybrid Native Architecture</h3>
-                    </div>
-                    <p>Deploy on-premises, in the cloud, or in hybrid environments with enterprise-grade security and compliance built-in.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Enterprise Security</h3>
-                    </div>
-                    <p>End-to-end encryption, role-based access control, and compliance with major industry standards. Deploy in your own environment to maintain complete IP security.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Customer Success Focus -->
-        <section class="enterprise-section section" id="customer-success">
-            <h2 class="section-title">Built for Enterprise Security and Scale</h2>
-            <p class="section-subtitle">Deploy with confidence knowing your enterprise demands are met</p>
-
-            <div class="enterprise-grid">
-                <div class="enterprise-item">
-                    <i class="fas fa-building"></i>
-                    <h3>Flexible Deployment</h3>
-                    <p>Deploy in your private cloud, on-premises, or hybrid environments with complete control over your data.</p>
-                </div>
-                <div class="enterprise-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Enterprise Security</h3>
-                    <p>Compliance, and role-based access controls protect your most sensitive systems.</p>
-                </div>
-                <div class="enterprise-item">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Advanced Services</h3>
-                    <p>Custom integrations, professional services, and dedicated support ensure seamless deployment and success.</p>
-                </div>
-                <div class="enterprise-item">
-                    <i class="fas fa-hands-helping"></i>
-                    <h3>Custom Integration</h3>
-                    <p>Native connectors and APIs allow seamless integration with your existing tools and custom enterprise workflows.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section section">
-            <h2>Ready to Transform Your Troubleshooting?</h2>
-            <p>Join hundreds of engineering teams who have revolutionized their troubleshooting with Sootro. Start your journey to 80% faster resolution times.</p>
-
-            <div class="cta-buttons">
-                <button class="cta-btn" onclick="openTrialModal()">Get Started</button>
-                <button class="cta-btn secondary" onclick="scheduleDemo()">Schedule a Demo</button>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Product</h3>
-                <ul>
-                    <li><a href="#solution">Solution</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#integrations">Integrations</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#docs">Documentation</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#case-studies">Case Studies</a></li>
-                    <li><a href="#webinars">Webinars</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#press">Press</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#help">Help Center</a></li>
-                    <li><a href="#community">Community</a></li>
-                    <li><a href="#status">Status</a></li>
-                    <li><a href="#security">Security</a></li>
-                </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Sootro. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+    </section>
+
+    <!-- Personas Section -->
+    <section class="personas-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">For Your Team</div>
+                <h2 class="section-title">Built for Modern Operations</h2>
+                <p class="section-subtitle">ProxiomSLM delivers measurable value across your organization</p>
+            </div>
+            <div class="personas-grid">
+                <div class="persona-card">
+                    <div class="persona-icon">👔</div>
+                    <h3 class="persona-title">For CIOs & CTOs</h3>
+                    <p class="persona-subtitle">Strategic operational excellence</p>
+                    <ul>
+                        <li>Reduce operational costs with automated triage and resolution</li>
+                        <li>Improve system reliability and uptime metrics</li>
+                        <li>Eliminate compliance risks with built-in PII/PCI protection</li>
+                        <li>Scale operations without proportional headcount growth</li>
+                        <li>Real-time visibility into organizational incident health</li>
+                        <li>Data-driven insights for resource allocation</li>
+                    </ul>
+                </div>
+                <div class="persona-card">
+                    <div class="persona-icon">⚙️</div>
+                    <h3 class="persona-title">For DevOps & Support Leaders</h3>
+                    <p class="persona-subtitle">Empower your teams to do their best work</p>
+                    <ul>
+                        <li>End alert fatigue and prevent engineer burnout</li>
+                        <li>Reduce MTTR with intelligent clustering and AI remediation</li>
+                        <li>Onboard new engineers faster with contextual assistance</li>
+                        <li>Build custom workflows without developer bottlenecks</li>
+                        <li>Track team performance with comprehensive analytics</li>
+                        <li>Focus on strategic work instead of manual triage</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Trial Request Modal -->
-    <div id="trialModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Get Early Access to Sootro</h2>
-                <button class="close-btn" onclick="closeTrialModal()">&times;</button>
-            </div> to 
+    <!-- CTA Section -->
+    <section class="cta-section" id="demo">
+        <div class="container">
+            <div class="cta-content">
+                <h2>See ProxiomSLM in Action</h2>
+                <p>Schedule a personalized demo and discover how ProxiomSLM can transform your incident management workflow.</p>
+            </div>
 
-            <div id="trialForm">
+            <div class="demo-form">
+                <h3>Request Your Demo</h3>
+                
+                <div id="successMessage" class="success-message">
+                    ✓ Thank you! We've received your request and will be in touch shortly.
+                </div>
 
-                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Join the revolution in software troubleshooting and cut your resolution times by 80%</p>
-
-                <form id="earlyAccessForm" onsubmit="submitForm(event)" netlify netlify-honeypot="bot-field" name="early-access">
-                    <!-- Hidden honeypot field for spam protection -->
+                <form name="demo-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="demoForm">
+                    <input type="hidden" name="form-name" value="demo-request">
                     <p style="display: none;">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        <label>Don't fill this out: <input name="bot-field"></label>
                     </p>
 
-                    <div class="form-group required">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" class="form-control" required>
-                        <div class="error-message" id="fullNameError"></div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
                     </div>
 
-                    <div class="form-group required">
-                        <label for="email">Work Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                        <div class="error-message" id="emailError"></div>
-                    </div>
-
-                    <div class="form-group required">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company" class="form-control" required>
-                        <div class="error-message" id="companyError"></div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role *</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="CIO/CTO">CIO/CTO</option>
+                                <option value="VP Engineering">VP Engineering</option>
+                                <option value="Director of DevOps">Director of DevOps</option>
+                                <option value="Support Leader">Support Leader</option>
+                                <option value="SRE Manager">SRE Manager</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="jobTitle">Job Title/Role</label>
-                        <input type="text" id="jobTitle" name="jobTitle" class="form-control" required>
-                        <div class="error-message" id="jobTitleError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="companySize">Company Size</label>
-                        <select id="companySize" name="companySize" class="form-control" required>
+                        <label for="company-size">Company Size *</label>
+                        <select id="company-size" name="company-size" required>
                             <option value="">Select company size</option>
                             <option value="1-50">1-50 employees</option>
                             <option value="51-200">51-200 employees</option>
-                            <option value="201-1000">201-1000 employees</option>
-                            <option value="1000+">1000+ employees</option>
-                        </select>
-                        <div class="error-message" id="companySizeError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="useCase">Primary Use Case</label>
-                        <select id="useCase" name="useCase" class="form-control" required>
-                            <option value="">Select primary use case</option>
-                            <option value="microservices">Microservices</option>
-                            <option value="legacy">Legacy Systems</option>
-                            <option value="cloud-native">Cloud-Native Applications</option>
-                            <option value="mixed">Agentic AI / AI Applications</option>
-                        </select>
-                        <div class="error-message" id="useCaseError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="painPoints">Current Pain Points (Optional)</label>
-                        <textarea id="painPoints" name="painPoints" class="form-control" rows="3" placeholder="Tell us about your current troubleshooting challenges..."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number (Optional)</label>
-                        <input type="tel" id="phone" name="phone" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="source">How did you hear about us?</label>
-                        <select id="source" name="source" class="form-control">
-                            <option value="">Select source</option>
-                            <option value="google">Google Search</option>
-                            <option value="linkedin">LinkedIn</option>
-                            <option value="referral">Referral</option>
-                            <option value="event">Conference/Event</option>
-                            <option value="other">Other</option>
+                            <option value="201-1000">201-1,000 employees</option>
+                            <option value="1001-5000">1,001-5,000 employees</option>
+                            <option value="5000+">5,000+ employees</option>
                         </select>
                     </div>
 
-                    <div class="benefits-list" style="margin: 2rem 0;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">What you'll get:</h4>
-                        <li>Comprehensive troubleshooting analysis</li>
-                        <li>Custom demo with your real data</li>
-                        <li>Architecture optimization recommendations</li>
-                        <li>30-day pilot program access</li>
-                        <li>Direct access to our engineering team</li>
+                    <div class="form-group">
+                        <label for="message">What challenges are you facing? (Optional)</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your current incident management challenges..."></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        Get Early Access
-                    </button>
+                    <button type="submit" class="btn-primary form-submit">Request Demo</button>
                 </form>
-
-                <div style="margin-top: 1rem; text-align: center; font-size: 0.875rem; color: var(--text-secondary);">
-                    <p>🔒 Enterprise-grade security • On-premise deployment available • No spam guarantee</p>
-                    <p><a href="#privacy" style="color: var(--primary-blue);">Privacy Policy</a></p>
-                </div>
-            </div>
-
-            <div id="successMessage" class="success-message">
-                <i class="fas fa-check-circle"></i>
-                <h3>Welcome to Sootro Early Access!</h3>
-                <p>Thank you for your interest. We'll be in touch soon with exclusive updates and early access information.</p>
-                <button class="cta-btn" onclick="closeTrialModal()">Continue Exploring</button>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ProxiomSLM</h3>
+                    <p>AI-native incident management platform for modern cloud-native applications. Master the full incident lifecycle with intelligent automation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#demo">Request Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@proxiom.ai">info@proxiom.ai</a></li>
+                        <li><a href="mailto:Amit.Vikram@Proxiom.ai">Sales</a></li>
+                        <li><a href="mailto:Amit.Saxena@Proxiom.ai">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ProxiomSLM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Modal functionality
-        function openTrialModal() {
-            const modal = document.getElementById('trialModal');
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-
-            // Focus management for accessibility
-            const firstInput = modal.querySelector('input');
-            if (firstInput) {
-                setTimeout(() => firstInput.focus(), 100);
-            }
-        }
-
-        function closeTrialModal() {
-            const modal = document.getElementById('trialModal');
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-
-            // Reset form if showing success message
-            const successMessage = document.getElementById('successMessage');
-            const trialForm = document.getElementById('trialForm');
-            if (successMessage.classList.contains('show')) {
-                successMessage.classList.remove('show');
-                trialForm.style.display = 'block';
-                document.getElementById('earlyAccessForm').reset();
-                clearErrors();
-            }
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('trialModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeTrialModal();
-            }
-        });
-
-        // Dual engine toggle functionality
-        function showEngine(engineType) {
-            // Update button states
-            document.querySelectorAll('.toggle-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-
-            // Update content visibility
-            document.querySelectorAll('.engine-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(engineType).classList.add('active');
-        }
-
-        // Form validation
-        function validateField(fieldName, value) {
-            const errorElement = document.getElementById(fieldName + 'Error');
-            const fieldElement = document.getElementById(fieldName);
-
-            let isValid = true;
-            let errorMessage = '';
-
-            switch(fieldName) {
-                case 'fullName':
-                    if (!value || value.trim().length < 2) {
-                        isValid = false;
-                        errorMessage = 'Please enter your full name';
-                    }
-                    break;
-                case 'email':
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!value || !emailRegex.test(value)) {
-                        isValid = false;
-                        errorMessage = 'Please enter a valid email address';
-                    }
-                    break;
-                case 'company':
-                    if (!value || value.trim().length < 2) {
-                        isValid = false;
-                        errorMessage = 'Please enter your company name';
-                    }
-                    break;
-                case 'jobTitle':
-                    if (!value || value.trim().length < 2) {
-                        isValid = false;
-                        errorMessage = 'Please enter your job title';
-                    }
-                    break;
-                case 'companySize':
-                    if (!value) {
-                        isValid = false;
-                        errorMessage = 'Please select your company size';
-                    }
-                    break;
-                case 'useCase':
-                    if (!value) {
-                        isValid = false;
-                        errorMessage = 'Please select your primary use case';
-                    }
-                    break;
-            }
-
-            if (isValid) {
-                fieldElement.classList.remove('error');
-                errorElement.textContent = '';
-            } else {
-                fieldElement.classList.add('error');
-                errorElement.textContent = errorMessage;
-            }
-
-            return isValid;
-        }
-
-        function clearErrors() {
-            document.querySelectorAll('.error-message').forEach(error => {
-                error.textContent = '';
-            });
-            document.querySelectorAll('.form-control').forEach(field => {
-                field.classList.remove('error');
-            });
-        }
-
-        // Add real-time validation
-        document.addEventListener('DOMContentLoaded', function() {
-            const requiredFields = ['fullName', 'email', 'company', 'jobTitle', 'companySize', 'useCase'];
-
-            requiredFields.forEach(fieldName => {
-                const field = document.getElementById(fieldName);
-                if (field) {
-                    field.addEventListener('blur', function() {
-                        validateField(fieldName, this.value);
-                    });
-
-                    field.addEventListener('input', function() {
-                        if (this.classList.contains('error')) {
-                            validateField(fieldName, this.value);
-                        }
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        function submitForm(event) {
-            event.preventDefault();
-
-            const form = event.target;
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            // Remove bot field from data if present
-            delete data['bot-field'];
-
-            // Validate all required fields
-            const requiredFields = ['fullName', 'email', 'company', 'jobTitle', 'companySize', 'useCase'];
-            let isFormValid = true;
-
-            requiredFields.forEach(fieldName => {
-                if (!validateField(fieldName, data[fieldName])) {
-                    isFormValid = false;
-                }
-            });
-
-            if (!isFormValid) {
-                return;
-            }
-
-            // Show loading state
-            const submitBtn = document.getElementById('submitBtn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="loading"></span> Getting early access...';
-            submitBtn.disabled = true;
-
-            // Submit to Netlify Forms
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({
-                    'form-name': 'early-access',
-                    ...data
-                }).toString()
-            })
-            .then(response => {
-                if (response.ok) {
-                    handleSuccessfulSubmission(data);
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Form submission error:', error);
-                handleFailedSubmission(data, error.message);
-            })
-            .finally(() => {
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
-        }
-
-        function handleSuccessfulSubmission(data) {
-            // Store data in localStorage as backup
-            localStorage.setItem('sootroEarlyAccessData', JSON.stringify({
-                ...data,
-                timestamp: new Date().toISOString(),
-                status: 'submitted'
-            }));
-
-            console.log('Early access submission successful:', data);
-
-            // Show success message
-            document.getElementById('trialForm').style.display = 'none';
-            document.getElementById('successMessage').classList.add('show');
-
-            // Simulate recent sign-up notification
-            if (Math.random() > 0.5) {
-                showNotification('John from TechCorp just joined early access!');
-            }
-        }
-
-        function handleFailedSubmission(data, errorMessage) {
-            // Fallback: Store in localStorage if server submission fails
-            localStorage.setItem('sootroEarlyAccessData', JSON.stringify({
-                ...data,
-                timestamp: new Date().toISOString(),
-                status: 'offline_backup',
-                error: errorMessage
-            }));
-
-            // Show error message but still allow user to continue
-            alert('There was an issue submitting your form. Your information has been saved locally and we will follow up with you.');
-
-            // Show success message anyway for better UX
-            document.getElementById('trialForm').style.display = 'none';
-            document.getElementById('successMessage').classList.add('show');
-        }
-
-        // Notification system
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: var(--dark-secondary);
-                color: var(--text-primary);
-                padding: 1rem 1.5rem;
-                border-radius: 8px;
-                border: 1px solid var(--primary-teal);
-                z-index: 3000;
-                font-size: 0.9rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                animation: slideInRight 0.3s ease;
-            `;
-            notification.textContent = message;
-
-            document.body.appendChild(notification);
-
-            setTimeout(() => {
-                notification.style.animation = 'slideOutRight 0.3s ease forwards';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 4000);
-        }
-
-        // Additional demo functions
-        function watchDemo() {
-            window.open('https://youtu.be/Sb8ccYksErg', '_blank');
-        }
-
-        function scheduleDemo() {
-            alert('This would open a calendar booking widget to schedule a personalized enterprise demo.');
-        }
-
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1723,121 +1673,59 @@
             });
         });
 
+        // Form submission
+        const form = document.getElementById('demoForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            setTimeout(() => {
+                successMessage.classList.add('show');
+                form.reset();
+                
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }, 100);
+        });
+
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        // Observe all sections for animation
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.section').forEach(section => {
-                observer.observe(section);
-            });
+        // Observe elements
+        document.querySelectorAll('.problem-card, .feature-showcase, .step-card, .persona-card, .phase-card, .enablement-card, .result-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
         });
 
-        // Add CSS for slide animations
-        const slideStyles = document.createElement('style');
-        slideStyles.textContent = `
-            @keyframes slideInRight {
-                from {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
             }
-
-            @keyframes slideOutRight {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(slideStyles);
-
-        // Update early access counter periodically
-        let earlyAccessCount = 500;
-        setInterval(() => {
-            if (Math.random() > 0.7) {
-                earlyAccessCount += Math.floor(Math.random() * 3) + 1;
-                const counterElement = document.querySelector('.social-proof-stat .number');
-                if (counterElement) {
-                    counterElement.textContent = earlyAccessCount + '+';
-                }
-            }
-        }, 30000);
-
-        // Keyboard navigation for modal
-        document.addEventListener('keydown', function(e) {
-            const modal = document.getElementById('trialModal');
-            if (modal.classList.contains('show')) {
-                if (e.key === 'Escape') {
-                    closeTrialModal();
-                }
-
-                // Tab trapping
-                if (e.key === 'Tab') {
-                    const focusableElements = modal.querySelectorAll(
-                        'button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                    );
-                    const firstElement = focusableElements[0];
-                    const lastElement = focusableElements[focusableElements.length - 1];
-
-                    if (e.shiftKey && document.activeElement === firstElement) {
-                        e.preventDefault();
-                        lastElement.focus();
-                    } else if (!e.shiftKey && document.activeElement === lastElement) {
-                        e.preventDefault();
-                        firstElement.focus();
-                    }
-                }
-            }
+            
+            lastScroll = currentScroll;
         });
     </script>
-
-    <!-- Hidden form for Netlify to detect form fields during build time -->
-    <form name="early-access" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="fullName" />
-        <input type="email" name="email" />
-        <input type="text" name="company" />
-        <input type="text" name="jobTitle" />
-        <select name="companySize">
-            <option value="1-50">1-50 employees</option>
-            <option value="51-200">51-200 employees</option>
-            <option value="201-1000">201-1000 employees</option>
-            <option value="1000+">1000+ employees</option>
-        </select>
-        <select name="useCase">
-            <option value="microservices">Microservices</option>
-            <option value="legacy">Legacy Systems</option>
-            <option value="cloud-native">Cloud-Native Applications</option>
-            <option value="mixed">Mixed Environment</option>
-        </select>
-        <textarea name="painPoints"></textarea>
-        <input type="tel" name="phone" />
-        <select name="source">
-            <option value="google">Google Search</option>
-            <option value="linkedin">LinkedIn</option>
-            <option value="referral">Referral</option>
-            <option value="event">Conference/Event</option>
-            <option value="other">Other</option>
-        </select>
-    </form>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
     <style>
         * {
             margin: 0;
@@ -16,9 +17,9 @@
         }
 
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
+            --primary: #4A5F7D;
+            --primary-dark: #3B4E6A;
+            --primary-light: #5B7396;
             --secondary: #0ea5e9;
             --accent: #8b5cf6;
             --dark: #0f172a;
@@ -109,13 +110,13 @@
             border: none;
             cursor: pointer;
             display: inline-block;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 12px rgba(74, 95, 125, 0.3);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 8px 20px rgba(74, 95, 125, 0.4);
         }
 
         .btn-secondary {
@@ -271,7 +272,7 @@
 
         .section-badge {
             display: inline-block;
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(74, 95, 125, 0.1);
             color: var(--primary);
             padding: 8px 20px;
             border-radius: 50px;
@@ -321,6 +322,13 @@
         .problem-icon {
             font-size: 48px;
             margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .problem-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--primary);
         }
 
         .problem-card h3 {
@@ -463,100 +471,6 @@
             line-height: 1.7;
         }
 
-        /* Personas Section */
-        .personas-section {
-            padding: 120px 0;
-            background: var(--light);
-        }
-
-        .personas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
-            margin-top: 80px;
-        }
-
-        .persona-card {
-            background: white;
-            padding: 50px;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            transition: all 0.3s;
-        }
-
-        .persona-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-        }
-
-        .persona-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin-bottom: 24px;
-        }
-
-        .persona-title {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 16px;
-            color: var(--dark);
-        }
-
-        .persona-subtitle {
-            font-size: 16px;
-            color: var(--gray);
-            margin-bottom: 32px;
-        }
-
-        .persona-card ul {
-            list-style: none;
-        }
-
-        .persona-card li {
-            padding: 14px 0;
-            padding-left: 32px;
-            position: relative;
-            color: var(--dark-3);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .persona-card li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* Integrations */
-        .integrations-section {
-            padding: 120px 0;
-            background: white;
-        }
-
-        .integrations-preview {
-            max-width: 1000px;
-            margin: 60px auto 0;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .integrations-preview img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
         /* Implementation Process */
         .implementation-section {
             padding: 120px 0;
@@ -575,7 +489,7 @@
             background: var(--light);
             padding: 50px;
             border-radius: 20px;
-            border: 2px solid rgba(99, 102, 241, 0.1);
+            border: 2px solid rgba(74, 95, 125, 0.1);
         }
 
         .phase-number {
@@ -689,7 +603,7 @@
         }
 
         .stage-item.highlight {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(74, 95, 125, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
             border-color: var(--primary);
         }
 
@@ -763,6 +677,13 @@
         .enablement-icon {
             font-size: 40px;
             margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+
+        .enablement-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--primary-light);
         }
 
         .enablement-card h4 {
@@ -809,13 +730,20 @@
         }
 
         .result-card.highlight {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(74, 95, 125, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
             border-color: var(--primary);
         }
 
         .result-icon {
             font-size: 48px;
             margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .result-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--primary);
         }
 
         .result-card h4 {
@@ -829,6 +757,85 @@
             color: var(--gray);
             line-height: 1.7;
             font-size: 15px;
+        }
+
+        /* Personas Section */
+        .personas-section {
+            padding: 120px 0;
+            background: var(--light);
+        }
+
+        .personas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .persona-card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .persona-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        .persona-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: white;
+        }
+
+        .persona-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .persona-subtitle {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+
+        .persona-card ul {
+            list-style: none;
+        }
+
+        .persona-card li {
+            padding: 14px 0;
+            padding-left: 32px;
+            position: relative;
+            color: var(--dark-3);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .persona-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
         }
 
         /* CTA Section */
@@ -912,7 +919,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+            box-shadow: 0 0 0 3px rgba(74, 95, 125, 0.1);
         }
 
         .form-group textarea {
@@ -1075,6 +1082,14 @@
                 gap: 32px;
             }
 
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .stat-label {
+                font-size: 13px;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -1132,9 +1147,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge fade-in-up">AI-Native Incident Management</div>
+                <div class="hero-badge fade-in-up">🚀 AI-Native Incident Management</div>
                 <h1 class="fade-in-up">Master the Full Incident Lifecycle</h1>
-                <p class="fade-in-up">Turn millions of log events into actionable insights. ProxiomSLM detects incidents from logs and other sources, automatically routes, and accelerates resolution with AI-powered remediation.</p>
+                <p class="fade-in-up">Turn millions of log events into actionable insights. ProxiomSLM detects incidents, automatically routes them, and accelerates resolution with AI-powered remediation.</p>
                 <div class="hero-buttons fade-in-up">
                     <a href="#demo" class="btn-primary">Request Demo</a>
                     <a href="#features" class="btn-secondary">See How It Works</a>
@@ -1180,22 +1195,22 @@
             </div>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <div class="problem-icon">🔔</div>
+                    <div class="problem-icon"><i data-feather="bell"></i></div>
                     <h3>Alert Fatigue</h3>
                     <p>Hundreds of similar alerts for one root cause. Engineers can't focus on what matters when buried in noise.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon">⏱️</div>
+                    <div class="problem-icon"><i data-feather="clock"></i></div>
                     <h3>Manual Triage</h3>
                     <p>Someone must read each alert and decide ownership. Incident response becomes a full-time job.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon">🔀</div>
+                    <div class="problem-icon"><i data-feather="shuffle"></i></div>
                     <h3>Context Switching</h3>
                     <p>Different teams use different tools, losing investigation threads and slowing resolution.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon">🔄</div>
+                    <div class="problem-icon"><i data-feather="refresh-cw"></i></div>
                     <h3>Recurring Issues</h3>
                     <p>Engineers start from scratch every time, even for problems you've seen before.</p>
                 </div>
@@ -1212,7 +1227,7 @@
                 <p class="section-subtitle">From detection to resolution, ProxiomSLM automates the entire incident lifecycle</p>
             </div>
 
-            <!-- Feature 1: Intelligent Clustering -->
+            <!-- Feature 1 -->
             <div class="feature-showcase">
                 <div class="feature-content">
                     <div class="feature-badge">✓ 90%+ Noise Reduction</div>
@@ -1230,7 +1245,7 @@
                 </div>
             </div>
 
-            <!-- Feature 2: Auto-Assignment -->
+            <!-- Feature 2 -->
             <div class="feature-showcase">
                 <div class="feature-content">
                     <div class="feature-badge">✓ Instant Routing</div>
@@ -1248,7 +1263,7 @@
                 </div>
             </div>
 
-            <!-- Feature 3: Service Graph -->
+            <!-- Feature 3 -->
             <div class="feature-showcase">
                 <div class="feature-content">
                     <div class="feature-badge">✓ Instant Impact Analysis</div>
@@ -1266,7 +1281,7 @@
                 </div>
             </div>
 
-            <!-- Feature 4: Teams & Assignment -->
+            <!-- Feature 4 -->
             <div class="feature-showcase">
                 <div class="feature-content">
                     <div class="feature-badge">✓ Smart Routing</div>
@@ -1284,7 +1299,7 @@
                 </div>
             </div>
 
-            <!-- Feature 5: Integrations -->
+            <!-- Feature 5 -->
             <div class="feature-showcase">
                 <div class="feature-content">
                     <div class="feature-badge">✓ Seamless Integration</div>
@@ -1346,7 +1361,6 @@
                 <p class="section-subtitle">A proven, two-phase journey from discovery to self-healing operations</p>
             </div>
 
-            <!-- Phase Overview -->
             <div class="phases-overview">
                 <div class="phase-card">
                     <div class="phase-number">Phase 1</div>
@@ -1453,51 +1467,49 @@
                 </div>
             </div>
 
-            <!-- Training & Enablement -->
             <div class="enablement-section">
                 <h3>More Than a Tool: Empowering Your Teams</h3>
                 <p class="enablement-intro">We don't just install software—we enable expertise. Your teams become masters of this AI-driven workflow.</p>
                 
                 <div class="enablement-grid">
                     <div class="enablement-card">
-                        <div class="enablement-icon">🎓</div>
+                        <div class="enablement-icon"><i data-feather="award"></i></div>
                         <h4>Platform Mastery</h4>
                         <p>Deep-dive sessions on using the ProxiomSLM interface and features</p>
                     </div>
                     <div class="enablement-card">
-                        <div class="enablement-icon">🔄</div>
+                        <div class="enablement-icon"><i data-feather="repeat"></i></div>
                         <h4>Workflow Integration</h4>
                         <p>Best practices for integrating AI-driven insights into existing incident management processes</p>
                     </div>
                     <div class="enablement-card">
-                        <div class="enablement-icon">📊</div>
+                        <div class="enablement-icon"><i data-feather="bar-chart-2"></i></div>
                         <h4>Data-Driven Review</h4>
                         <p>Training on interpreting performance data and participating in ongoing model improvements</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Results -->
             <div class="implementation-results">
                 <h3>The Result: A New Standard for IT Operations</h3>
                 <div class="results-grid">
                     <div class="result-card">
-                        <div class="result-icon">⚡</div>
+                        <div class="result-icon"><i data-feather="zap"></i></div>
                         <h4>Faster Resolution</h4>
                         <p>Incidents are detected, assigned, and resolved with unparalleled speed</p>
                     </div>
                     <div class="result-card">
-                        <div class="result-icon">✓</div>
+                        <div class="result-icon"><i data-feather="check-circle"></i></div>
                         <h4>Clear Accountability</h4>
                         <p>Every issue has a clear path and owner, tracked intelligently by the system</p>
                     </div>
                     <div class="result-card">
-                        <div class="result-icon">🎯</div>
+                        <div class="result-icon"><i data-feather="target"></i></div>
                         <h4>Proactive Intelligence</h4>
                         <p>Teams freed from repetitive tasks to focus on strategic improvements, guided by AI insights</p>
                     </div>
                     <div class="result-card highlight">
-                        <div class="result-icon">🚀</div>
+                        <div class="result-icon"><i data-feather="trending-up"></i></div>
                         <h4>Foundation for Self-Healing</h4>
                         <p>Platform, processes, and partnership in place to pursue the ultimate goal of autonomous operations</p>
                     </div>
@@ -1516,7 +1528,7 @@
             </div>
             <div class="personas-grid">
                 <div class="persona-card">
-                    <div class="persona-icon">👔</div>
+                    <div class="persona-icon"><i data-feather="briefcase"></i></div>
                     <h3 class="persona-title">For CIOs & CTOs</h3>
                     <p class="persona-subtitle">Strategic operational excellence</p>
                     <ul>
@@ -1529,7 +1541,7 @@
                     </ul>
                 </div>
                 <div class="persona-card">
-                    <div class="persona-icon">⚙️</div>
+                    <div class="persona-icon"><i data-feather="settings"></i></div>
                     <h3 class="persona-title">For DevOps & Support Leaders</h3>
                     <p class="persona-subtitle">Empower your teams to do their best work</p>
                     <ul>
@@ -1659,6 +1671,9 @@
     </footer>
 
     <script>
+        // Initialize Feather icons
+        feather.replace();
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
